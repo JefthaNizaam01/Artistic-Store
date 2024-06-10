@@ -1,1 +1,29 @@
-/*  */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+:is(body, .card) {
+    display: grid;
+}
+
+:is(body) {
+    grid-template-rows: auto minmax(100dvh, 100%) auto;
+}
+
+.navbar img[alt='logo'] {
+    width: 5rem;
+}
+
+.nav-link {
+    color: #ad7730;
+    font-weight: bold;
+    font-family: serif;
+    font-size: 19px;
+}
