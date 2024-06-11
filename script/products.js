@@ -92,3 +92,15 @@ let products = JSON.parse(localStorage.getItem("products"))
             container.innerHTML = `<div class="alert alert-warning">${error.message}</div>`;
         }
     });
+
+    let ascendingOrder = true; // Default sort order
+  sortingByAmount.addEventListener("click", () => {
+    try {
+      products.sort((a, b) => (ascendingOrder ? a.price - b.price : b.price - a.price));
+      displayProducts(products);
+      ascendingOrder = !ascendingOrder; // Toggle sort order
+      sortingByAmount.textContent = ascendingOrder ? "Sorted by lowest amount" : "Sorted by highest amount";
+    } catch (error) {
+      container.innerHTML = `<div class="alert alert-danger">Sorting failed. Please try again.</div>`;
+    }
+  });
