@@ -21,6 +21,12 @@ document.addEventListener("DOMContentLoaded", function() {
             productTableBody.appendChild(row);
         });
     }
+    
+    let spinnerWrapper = document.querySelector(".spinner-wrapper");
+setTimeout(() => {
+  spinnerWrapper.style.opacity = 0;
+}, 400);
+
     function filterAndSortProducts(query) {
         const filteredProducts = products.filter(product =>
             product.productName.toLowerCase().includes(query.toLowerCase()) ||
@@ -104,7 +110,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const modal = bootstrap.Modal.getInstance(document.getElementById("addProductModal"));
         modal.hide();
     });
-    // Event listener for remove buttons
     productTableBody.addEventListener("click", function(event) {
         if (event.target.classList.contains("remove-btn")) {
             const productId = parseInt(event.target.dataset.id);
