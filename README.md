@@ -1,1 +1,1 @@
-# mzeeStore
+# Artistic-Store
